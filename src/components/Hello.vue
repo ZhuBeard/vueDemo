@@ -21,11 +21,20 @@
 </template>
 
 <script>
+import { test } from 'services/service'
 export default {
   name: 'hello',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    // 调用接口的用法
+    test () {
+      test.bind(this)().then(res => {
+        console.log(res)
+      })
     }
   }
 }
